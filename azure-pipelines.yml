@@ -3,17 +3,12 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
-variables:
-  JAVA_VARA: ${javaHomeOption}
-
-
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: ${JAVA_VARA}
+    javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
